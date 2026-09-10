@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+ * "الوقار الرقمي" — Digital Dignity.
+ * Token names are semantic (surface/ink/accent) rather than raw color names,
+ * so dark mode can redefine the *role* each token plays instead of inverting values.
+ */
+:root {
+  --color-paper: #f6f3ec;
+  --color-paper-raised: #fffefb;
+  --color-ink: #1c241f;
+  --color-ink-muted: #4d564f;
+  --color-ink-faint: #8a9088;
+  --color-deep: #1f4d3d;
+  --color-deep-hover: #17392d;
+  --color-gold: #b08d57;
+  --color-gold-soft: #d9c49c;
+  --color-soft-green: #e6ece7;
+  --color-border: #dcd6c8;
+  --color-border-strong: #c3bca9;
+  --color-danger: #9a3324;
+  --color-danger-soft: #f4e3df;
+  --color-success: #1f4d3d;
+  --radius-card: 1.1rem;
+  --radius-control: 0.6rem;
+  --shadow-card: 0 1px 2px rgba(28, 36, 31, 0.04), 0 8px 24px -12px rgba(28, 36, 31, 0.12);
+}
+
+.dark {
+  --color-paper: #141815;
+  --color-paper-raised: #1b211d;
+  --color-ink: #f1efe8;
+  --color-ink-muted: #b9c0b6;
+  --color-ink-faint: #767f76;
+  --color-deep: #7fb39c;
+  --color-deep-hover: #99c6b2;
+  --color-gold: #c9a875;
+  --color-gold-soft: #6b5a3c;
+  --color-soft-green: #1e2a24;
+  --color-border: #2a3129;
+  --color-border-strong: #3a4238;
+  --color-danger: #e0a396;
+  --color-danger-soft: #3a2420;
+  --color-success: #7fb39c;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-raised: var(--color-paper-raised);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-deep: var(--color-deep);
+  --color-deep-hover: var(--color-deep-hover);
+  --color-gold: var(--color-gold);
+  --color-gold-soft: var(--color-gold-soft);
+  --color-soft-green: var(--color-soft-green);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-danger: var(--color-danger);
+  --color-danger-soft: var(--color-danger-soft);
+  --font-heading: var(--font-kufi), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-deep);
+  outline-offset: 2px;
+}
+
+@media print {
+  nav, footer, .no-print {
+    display: none !important;
+  }
+}
