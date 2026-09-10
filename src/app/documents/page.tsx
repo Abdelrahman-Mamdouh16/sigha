@@ -14,7 +14,7 @@ export default function DocumentsPage() {
 
   return (
     <>
-      <Navbar />
+     
       <main className="py-14 sm:py-20">
         <Container>
           <div className="mb-10 max-w-lg">
@@ -55,7 +55,7 @@ export default function DocumentsPage() {
           </div>
         </Container>
       </main>
-      <Footer />
+     
     </>
   );
 }

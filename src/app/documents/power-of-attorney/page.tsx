@@ -19,7 +19,7 @@ export default function PoaIntroPage() {
 
   return (
     <>
-      <Navbar />
+     
       <main className="py-16 sm:py-24">
         <Container className="max-w-2xl text-center">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-(--color-soft-green)">
@@ -42,7 +42,7 @@ export default function PoaIntroPage() {
           </Button>
         </Container>
       </main>
-      <Footer />
+     
     </>
   );
 }

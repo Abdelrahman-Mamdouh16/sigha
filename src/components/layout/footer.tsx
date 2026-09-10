@@ -12,12 +12,12 @@ export function Footer() {
     <footer className="border-t border-(--color-border) py-10">
       <Container className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-start">
         <div>
-          <div className="font-heading text-lg font-semibold text-(--color-ink)">صِيغة</div>
+          <div className="font-heading text-lg font-semibold text-(--color-ink)">{dict.footer.title}</div>
           <p className="mt-1 text-sm text-(--color-ink-muted)">{dict.footer.tagline}</p>
         </div>
         <div className="text-xs text-(--color-ink-faint)">
           <p>
-            © {year} صِيغة · Sigha — {dict.footer.rights}
+            © {year} صِيغة | Sigha — {dict.footer.rights}
           </p>
           <p className="mt-1">{dict.footer.disclaimerShort}</p>
         </div>

@@ -23,8 +23,11 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-(--color-border) bg-(--color-paper)/85 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="font-heading text-xl font-semibold tracking-tight text-(--color-ink)">
-          صِيغة
+        <Link
+          href="/"
+          className="font-heading text-xl font-semibold tracking-tight text-(--color-ink)"
+        >
+          {dict.nav.title}
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
@@ -54,22 +57,39 @@ export function Navbar() {
           aria-label="القائمة"
           aria-expanded={open}
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? (
+            <X className="h-5 w-5 cursor-pointer" />
+          ) : (
+            <Menu className="h-5 w-5 cursor-pointer" />
+          )}
         </button>
       </Container>
 
       {open && (
-        <div className="border-t border-(--color-border) md:hidden">
+        <div
+          className={`
+    overflow-hidden border-t border-(--color-border) md:hidden
+    transition-all duration-300 ease-in-out
+    ${open ? "max-h-96 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2"}
+  `}
+        >
           <Container className="flex flex-col gap-4 py-5">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="text-sm text-(--color-ink)" onClick={() => setOpen(false)}>
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm text-(--color-ink)"
+                onClick={() => setOpen(false)}
+              >
                 {l.label}
               </Link>
             ))}
+
             <div className="flex items-center justify-between pt-2">
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
+
             <Button asChild>
               <Link href="/documents">{dict.nav.cta}</Link>
             </Button>

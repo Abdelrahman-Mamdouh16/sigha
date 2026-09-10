@@ -34,7 +34,7 @@ export default function CreateDocumentPage() {
   if (documentType !== "rental" && documentType !== "power-of-attorney") {
     return (
       <>
-        <Navbar />
+       
         <Container className="py-24 text-center">
           <h1 className="text-2xl font-bold text-(--color-ink)">{dict.errors.notFound}</h1>
           <p className="mt-2 text-(--color-ink-muted)">{dict.errors.notFoundBody}</p>
@@ -42,7 +42,7 @@ export default function CreateDocumentPage() {
             <a href="/documents">{dict.errors.goHome}</a>
           </Button>
         </Container>
-        <Footer />
+       
       </>
     );
   }
@@ -84,7 +84,7 @@ export default function CreateDocumentPage() {
 
   return (
     <>
-      <Navbar />
+     
       <main className="py-12 sm:py-16">
         <Container className="max-w-3xl">
           {phase === "form" && (
@@ -108,7 +108,7 @@ export default function CreateDocumentPage() {
           )}
         </Container>
       </main>
-      <Footer />
+     
     </>
   );
 }

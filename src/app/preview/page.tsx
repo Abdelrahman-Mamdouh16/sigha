@@ -72,7 +72,7 @@ export default function PreviewPage() {
 
   return (
     <>
-      <Navbar />
+     
       <main className="py-10 sm:py-14">
         <Container>
           {document === undefined && <div className="py-24 text-center text-(--color-ink-muted)">{dict.common.loading}</div>}
@@ -119,7 +119,7 @@ export default function PreviewPage() {
           )}
         </Container>
       </main>
-      <Footer />
+     
     </>
   );
 }
