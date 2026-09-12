@@ -1,8 +1,10 @@
+import { title } from "process";
 import type { Locale } from "./config";
 
 export const dictionaries = {
   ar: {
     nav: {
+      title: "صِيغة",
       home: "الرئيسية",
       documents: "المستندات",
       howItWorks: "كيف تعمل",
@@ -10,6 +12,7 @@ export const dictionaries = {
       cta: "ابدأ الآن",
     },
     hero: {
+      title: "صِيغة",
       eyebrow: "أداة تجريبية لصياغة المستندات",
       heading: "الصياغه القانونية، أصبحت أبسط.",
       sub: "أنشئ مسودة مستند قانوني باللغة العربية بمساعدة الذكاء الاصطناعي، خلال دقائق.",
@@ -21,11 +24,13 @@ export const dictionaries = {
       sub: "ابدأ بأحد المستندات المتاحة، وأضف بياناتك خطوة بخطوة.",
       rental: {
         title: "عقد إيجار",
-        description: "مسودة عقد إيجار لوحدة سكنية أو تجارية، تشمل الأطراف والمدة والقيمة الإيجارية وشروط الاستخدام.",
+        description:
+          "مسودة عقد إيجار لوحدة سكنية أو تجارية، تشمل الأطراف والمدة والقيمة الإيجارية وشروط الاستخدام.",
       },
       poa: {
         title: "توكيل",
-        description: "مسودة توكيل يحدد فيها الموكل الصلاحيات الممنوحة للوكيل ونطاقها ومدتها.",
+        description:
+          "مسودة توكيل يحدد فيها الموكل الصلاحيات الممنوحة للوكيل ونطاقها ومدتها.",
       },
       comingSoon: "قريباً",
       start: "ابدأ",
@@ -33,18 +38,42 @@ export const dictionaries = {
     howItWorks: {
       heading: "كيف تعمل صِيغة",
       steps: [
-        { title: "اختر نوع المستند", description: "حدد المستند الذي تحتاجه من القائمة المتاحة." },
-        { title: "أدخل بياناتك", description: "أكمل نموذجاً مرشداً على خطوات قصيرة وواضحة." },
-        { title: "راجع المسودة", description: "يقوم الذكاء الاصطناعي بصياغة مسودة منظمة من بياناتك فقط." },
-        { title: "حمّل الملف", description: "نزّل المستند بصيغة PDF جاهزاً للمراجعة والطباعة." },
+        {
+          title: "اختر نوع المستند",
+          description: "حدد المستند الذي تحتاجه من القائمة المتاحة.",
+        },
+        {
+          title: "أدخل بياناتك",
+          description: "أكمل نموذجاً مرشداً على خطوات قصيرة وواضحة.",
+        },
+        {
+          title: "راجع المسودة",
+          description:
+            "يقوم الذكاء الاصطناعي بصياغة مسودة منظمة من بياناتك فقط.",
+        },
+        {
+          title: "حمّل الملف",
+          description: "نزّل المستند بصيغة PDF جاهزاً للمراجعة والطباعة.",
+        },
       ],
     },
     whySigha: {
       heading: "لماذا صِيغة",
       points: [
-        { title: "عربية أولاً", description: "واجهة ومستندات مصممة للغة العربية والاتجاه من اليمين لليسار." },
-        { title: "بياناتك فقط", description: "المسودة تُبنى من المعلومات التي تدخلها أنت، دون افتراضات إضافية." },
-        { title: "بلا حسابات ولا تعقيد", description: "لا حاجة لإنشاء حساب أو حفظ بيانات؛ أدخل، راجع، وحمّل." },
+        {
+          title: "عربية أولاً",
+          description:
+            "واجهة ومستندات مصممة للغة العربية والاتجاه من اليمين لليسار.",
+        },
+        {
+          title: "بياناتك فقط",
+          description:
+            "المسودة تُبنى من المعلومات التي تدخلها أنت، دون افتراضات إضافية.",
+        },
+        {
+          title: "بلا حسابات ولا تعقيد",
+          description: "لا حاجة لإنشاء حساب أو حفظ بيانات؛ أدخل، راجع، وحمّل.",
+        },
       ],
     },
     trust: {
@@ -56,6 +85,7 @@ export const dictionaries = {
       button: "ابدأ إنشاء مستند",
     },
     footer: {
+      title: "صِيغة",
       tagline: "صياغة مستندات قانونية بالعربية، بمساعدة الذكاء الاصطناعي.",
       rights: "جميع الحقوق محفوظة.",
       disclaimerShort: "أداة تجريبية — ليست بديلاً عن استشارة قانونية.",
@@ -95,7 +125,11 @@ export const dictionaries = {
       address: "العنوان",
       propertySection: "بيانات العقار",
       propertyType: "نوع العقار",
-      propertyTypeOptions: { residential: "سكني", commercial: "تجاري", other: "أخرى" },
+      propertyTypeOptions: {
+        residential: "سكني",
+        commercial: "تجاري",
+        other: "أخرى",
+      },
       propertyDescription: "وصف العقار",
       governorate: "المحافظة",
       city: "المدينة",
@@ -110,7 +144,11 @@ export const dictionaries = {
       endDate: "تاريخ نهاية العقد",
       rentAmount: "قيمة الإيجار",
       rentFrequency: "دورية السداد",
-      rentFrequencyOptions: { monthly: "شهري", quarterly: "ربع سنوي", yearly: "سنوي" },
+      rentFrequencyOptions: {
+        monthly: "شهري",
+        quarterly: "ربع سنوي",
+        yearly: "سنوي",
+      },
       paymentMethod: "طريقة السداد",
       paymentDueDay: "يوم الاستحقاق من كل شهر",
       securityDeposit: "مبلغ التأمين",
@@ -165,7 +203,8 @@ export const dictionaries = {
     },
     preview: {
       heading: "معاينة المستند",
-      disclaimer: "هذه مسودة مولدة بمساعدة الذكاء الاصطناعي، ويُنصح بمراجعتها من مختص قانوني قبل استخدامها.",
+      disclaimer:
+        "هذه مسودة مولدة بمساعدة الذكاء الاصطناعي، ويُنصح بمراجعتها من مختص قانوني قبل استخدامها.",
       signatures: "التوقيعات",
       witnesses: "الشهود",
     },
@@ -174,7 +213,8 @@ export const dictionaries = {
       validation: "تحقق من البيانات المدخلة وحاول مرة أخرى.",
       network: "تعذّر الاتصال بالخادم. تحقق من اتصالك بالإنترنت.",
       aiUnavailable: "خدمة الصياغة غير متاحة حالياً. حاول لاحقاً.",
-      rateLimited: "عدد الطلبات كبير حالياً. الرجاء الانتظار قليلاً ثم المحاولة مجدداً.",
+      rateLimited:
+        "عدد الطلبات كبير حالياً. الرجاء الانتظار قليلاً ثم المحاولة مجدداً.",
       pdfFailed: "تعذّر إنشاء ملف PDF. حاول مرة أخرى.",
       notFound: "الصفحة غير موجودة.",
       notFoundBody: "الرابط الذي فتحته غير صحيح أو لم يعد متاحاً.",
@@ -183,6 +223,7 @@ export const dictionaries = {
   },
   en: {
     nav: {
+      title: "Sigha",
       home: "Home",
       documents: "Documents",
       howItWorks: "How it works",
@@ -190,6 +231,7 @@ export const dictionaries = {
       cta: "Get started",
     },
     hero: {
+      title: "Sigha",
       eyebrow: "An experimental drafting tool",
       heading: "Legal drafting, made simpler.",
       sub: "Create an Arabic legal document draft with AI assistance, in minutes.",
@@ -201,11 +243,13 @@ export const dictionaries = {
       sub: "Start with one of the available documents and add your details step by step.",
       rental: {
         title: "Rental contract",
-        description: "A rental agreement draft for a residential or commercial unit, covering the parties, term, rent, and usage terms.",
+        description:
+          "A rental agreement draft for a residential or commercial unit, covering the parties, term, rent, and usage terms.",
       },
       poa: {
         title: "Power of attorney",
-        description: "A power-of-attorney draft where the principal defines the agent's granted powers, scope, and duration.",
+        description:
+          "A power-of-attorney draft where the principal defines the agent's granted powers, scope, and duration.",
       },
       comingSoon: "Coming soon",
       start: "Start",
@@ -213,18 +257,42 @@ export const dictionaries = {
     howItWorks: {
       heading: "How Sigha works",
       steps: [
-        { title: "Choose a document type", description: "Pick the document you need from the list." },
-        { title: "Enter your details", description: "Complete a guided form in short, clear steps." },
-        { title: "Review the draft", description: "AI drafts a structured document from your data only." },
-        { title: "Download the file", description: "Get a PDF ready for review and printing." },
+        {
+          title: "Choose a document type",
+          description: "Pick the document you need from the list.",
+        },
+        {
+          title: "Enter your details",
+          description: "Complete a guided form in short, clear steps.",
+        },
+        {
+          title: "Review the draft",
+          description: "AI drafts a structured document from your data only.",
+        },
+        {
+          title: "Download the file",
+          description: "Get a PDF ready for review and printing.",
+        },
       ],
     },
     whySigha: {
       heading: "Why Sigha",
       points: [
-        { title: "Arabic-first", description: "An interface and documents built for Arabic and right-to-left layout." },
-        { title: "Your data only", description: "The draft is built from what you enter, with no added assumptions." },
-        { title: "No accounts, no clutter", description: "No sign-up or stored data; enter, review, and download." },
+        {
+          title: "Arabic-first",
+          description:
+            "An interface and documents built for Arabic and right-to-left layout.",
+        },
+        {
+          title: "Your data only",
+          description:
+            "The draft is built from what you enter, with no added assumptions.",
+        },
+        {
+          title: "No accounts, no clutter",
+          description:
+            "No sign-up or stored data; enter, review, and download.",
+        },
       ],
     },
     trust: {
@@ -236,9 +304,11 @@ export const dictionaries = {
       button: "Start a document",
     },
     footer: {
+      title: "Sigha",
       tagline: "Drafting Arabic legal documents with AI assistance.",
       rights: "All rights reserved.",
-      disclaimerShort: "An experimental tool — not a substitute for legal advice.",
+      disclaimerShort:
+        "An experimental tool — not a substitute for legal advice.",
     },
     documentsPage: {
       heading: "Choose a document type",
@@ -275,7 +345,11 @@ export const dictionaries = {
       address: "Address",
       propertySection: "Property details",
       propertyType: "Property type",
-      propertyTypeOptions: { residential: "Residential", commercial: "Commercial", other: "Other" },
+      propertyTypeOptions: {
+        residential: "Residential",
+        commercial: "Commercial",
+        other: "Other",
+      },
       propertyDescription: "Property description",
       governorate: "Governorate",
       city: "City",
@@ -290,7 +364,11 @@ export const dictionaries = {
       endDate: "End date",
       rentAmount: "Rent amount",
       rentFrequency: "Payment frequency",
-      rentFrequencyOptions: { monthly: "Monthly", quarterly: "Quarterly", yearly: "Yearly" },
+      rentFrequencyOptions: {
+        monthly: "Monthly",
+        quarterly: "Quarterly",
+        yearly: "Yearly",
+      },
       paymentMethod: "Payment method",
       paymentDueDay: "Due day of each month",
       securityDeposit: "Security deposit",
@@ -345,7 +423,8 @@ export const dictionaries = {
     },
     preview: {
       heading: "Document preview",
-      disclaimer: "This is an AI-assisted draft. It should be reviewed by a legal professional before use.",
+      disclaimer:
+        "This is an AI-assisted draft. It should be reviewed by a legal professional before use.",
       signatures: "Signatures",
       witnesses: "Witnesses",
     },
@@ -353,8 +432,10 @@ export const dictionaries = {
       generic: "Something went wrong. Please try again.",
       validation: "Check the entered details and try again.",
       network: "Couldn't reach the server. Check your connection.",
-      aiUnavailable: "The drafting service is unavailable right now. Try again later.",
-      rateLimited: "Too many requests right now. Please wait a moment and try again.",
+      aiUnavailable:
+        "The drafting service is unavailable right now. Try again later.",
+      rateLimited:
+        "Too many requests right now. Please wait a moment and try again.",
       pdfFailed: "Couldn't generate the PDF. Please try again.",
       notFound: "Page not found.",
       notFoundBody: "The link you opened is invalid or no longer available.",

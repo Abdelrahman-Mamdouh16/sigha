@@ -11,7 +11,7 @@ export function DocumentTypesSection() {
   const t = dict.documentTypes;
 
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-16 sm:py-20 scroll-mt-16" id="documents">
       <Container>
         <div className="mb-10 max-w-lg">
           <h2 className="text-3xl font-bold text-(--color-ink)">{t.heading}</h2>

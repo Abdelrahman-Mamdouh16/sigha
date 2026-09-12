@@ -20,7 +20,9 @@ export function Hero() {
           <h1 className="mt-5 text-4xl font-bold leading-[1.2] text-(--color-ink) sm:text-5xl">
             {dict.hero.heading}
           </h1>
-          <p className="mt-5 max-w-md text-lg leading-relaxed text-(--color-ink-muted)">{dict.hero.sub}</p>
+          <p className="mt-5 max-w-md text-lg leading-relaxed text-(--color-ink-muted)">
+            {dict.hero.sub}
+          </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
               <Link href="/documents">
@@ -35,11 +37,16 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-sm">
-          <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-(--color-soft-green)" aria-hidden />
+          <div
+            className="absolute -inset-4 -z-10 rounded-[2rem] bg-(--color-soft-green)"
+            aria-hidden
+          />
           <div className="rounded-2xl border border-(--color-border) bg-(--color-paper-raised) p-7 shadow-[var(--shadow-card)]">
             <div className="mb-5 flex items-center justify-between">
               <FileText className="h-5 w-5 text-(--color-gold)" />
-              <span className="font-heading text-sm text-(--color-ink-faint)">صِيغة</span>
+              <span className="font-heading text-sm text-(--color-ink-faint)">
+                {dict.hero.title}
+              </span>
             </div>
             <div className="h-3.5 w-2/3 rounded bg-(--color-ink) opacity-90" />
             <div className="mt-5 space-y-2.5">

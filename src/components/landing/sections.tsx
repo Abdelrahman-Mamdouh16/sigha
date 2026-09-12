@@ -12,7 +12,7 @@ const whyIcons = [Globe, ShieldCheck, MousePointerClick];
 export function HowItWorksSection() {
   const { dict } = useLocale();
   return (
-    <section id="how-it-works" className="border-t border-(--color-border) bg-(--color-soft-green)/40 py-16 sm:py-20">
+    <section id="how-it-works" className="border-t border-(--color-border) bg-(--color-soft-green)/40 py-16 sm:py-20 scroll-mt-16">
       <Container>
         <h2 className="mb-10 text-3xl font-bold text-(--color-ink)">{dict.howItWorks.heading}</h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -37,7 +37,7 @@ export function HowItWorksSection() {
 export function WhySighaSection() {
   const { dict } = useLocale();
   return (
-    <section id="about" className="py-16 sm:py-20">
+    <section id="about" className="py-16 sm:py-20 scroll-mt-16">
       <Container>
         <h2 className="mb-10 text-3xl font-bold text-(--color-ink)">{dict.whySigha.heading}</h2>
         <div className="grid gap-8 sm:grid-cols-3">
@@ -60,7 +60,7 @@ export function WhySighaSection() {
 export function TrustSection() {
   const { dict } = useLocale();
   return (
-    <section className="py-10">
+    <section className="py-10 scroll-mt-16">
       <Container>
         <div className="rounded-[var(--radius-card)] border border-(--color-border) bg-(--color-paper-raised) p-7">
           <h3 className="text-sm font-semibold text-(--color-ink)">{dict.trust.heading}</h3>
@@ -74,7 +74,7 @@ export function TrustSection() {
 export function CtaSection() {
   const { dict } = useLocale();
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-16 sm:py-20 scroll-mt-16">
       <Container className="flex flex-col items-center gap-5 rounded-[var(--radius-card)] bg-(--color-deep) px-8 py-14 text-center">
         <h2 className="text-2xl font-bold text-(--color-paper-raised) sm:text-3xl">{dict.cta.heading}</h2>
         <Button asChild size="lg" variant="gold">

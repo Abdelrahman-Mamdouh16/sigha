@@ -7,6 +7,7 @@ export interface RentalParty {
 
 export type PropertyType = "residential" | "commercial" | "other";
 export type RentFrequency = "monthly" | "quarterly" | "yearly";
+export type paymentMethod = "cash" | "bank_transfer" | "credit_card";
 
 export interface RentalFormValues {
   contractDate: string;
@@ -33,7 +34,7 @@ export interface RentalFormValues {
     endDate: string;
     rentAmount: number;
     rentFrequency: RentFrequency;
-    paymentMethod: string;
+    paymentMethod: paymentMethod;
     paymentDueDay: number;
     securityDeposit?: number;
   };
@@ -86,7 +87,7 @@ export const RENTAL_DEMO_DATA: RentalFormValues = {
     endDate: "2027-09-30",
     rentAmount: 3500,
     rentFrequency: "monthly",
-    paymentMethod: "تحويل بنكي",
+    paymentMethod: "cash",
     paymentDueDay: 5,
     securityDeposit: 7000,
   },

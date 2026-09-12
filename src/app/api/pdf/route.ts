@@ -9,7 +9,11 @@ export const maxDuration = 30;
 
 const MAX_BODY_BYTES = 60_000;
 
-function errorResponse(code: string, message: string, status: number): NextResponse {
+function errorResponse(
+  code: string,
+  message: string,
+  status: number,
+): NextResponse {
   const body: ApiResponse<never> = { success: false, error: { code, message } };
   return NextResponse.json(body, { status });
 }
@@ -17,11 +21,17 @@ function errorResponse(code: string, message: string, status: number): NextRespo
 export async function POST(req: NextRequest) {
   const rawBody = await req.text();
   if (rawBody.length > MAX_BODY_BYTES) {
-    return errorResponse("PAYLOAD_TOO_LARGE", "Request body is too large.", 413);
+    return errorResponse(
+      "PAYLOAD_TOO_LARGE",
+      "Request body is too large.",
+      413,
+    );
   }
 
   const identifier =
-    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "unknown";
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    req.headers.get("x-real-ip") ||
+    "unknown";
   const rate = checkRateLimit(identifier);
   if (!rate.allowed) {
     return errorResponse("RATE_LIMITED", "Too many requests.", 429);
@@ -31,12 +41,31 @@ export async function POST(req: NextRequest) {
   try {
     parsed = JSON.parse(rawBody);
   } catch {
-    return errorResponse("INVALID_JSON", "Request body must be valid JSON.", 400);
+    return errorResponse(
+      "INVALID_JSON",
+      "Request body must be valid JSON.",
+      400,
+    );
   }
 
-  const { error, value } = documentModelSchema.validate(parsed, { abortEarly: false, stripUnknown: true });
+  const { error, value } = documentModelSchema.validate(parsed, {
+    abortEarly: false,
+    stripUnknown: true,
+  });
   if (error) {
-    return errorResponse("VALIDATION_ERROR", "The document data did not pass validation.", 422);
+    return NextResponse.json(
+      {
+        success: false,
+        error: {
+          code: "VALIDATION_ERROR",
+          message: error.details.map((detail) => ({
+            field: detail.path.join("."),
+            message: detail.message,
+          })),
+        },
+      },
+      { status: 422 },
+    );
   }
 
   try {

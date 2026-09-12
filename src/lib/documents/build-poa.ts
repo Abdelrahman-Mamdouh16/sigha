@@ -29,7 +29,7 @@ export async function buildPoaDocument(v: PoaFormValues): Promise<{ document: Do
       { role: "الوكيل", name: v.agent.fullName },
     ],
     witnesses: [],
-    notices: ["هذه مسودة مولدة بمساعدة الذكاء الاصطناعي، ويُنصح بمراجعتها من مختص قانوني قبل استخدامها."],
+    // notices: ["هذه مسودة مولدة بمساعدة الذكاء الاصطناعي، ويُنصح بمراجعتها من مختص قانوني قبل استخدامها."],
     generatedAt: new Date().toISOString(),
   };
 

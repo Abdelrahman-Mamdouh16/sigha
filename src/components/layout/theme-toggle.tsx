@@ -25,6 +25,7 @@ export function ThemeToggle() {
       size="icon"
       aria-label={isDark ? "التبديل إلى الوضع الفاتح" : "التبديل إلى الوضع الداكن"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="cursor-pointer"
     >
       {isDark ? <Sun className="h-[1.1rem] w-[1.1rem]" /> : <Moon className="h-[1.1rem] w-[1.1rem]" />}
     </Button>

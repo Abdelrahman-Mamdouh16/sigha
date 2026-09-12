@@ -23,7 +23,8 @@
   --color-success: #1f4d3d;
   --radius-card: 1.1rem;
   --radius-control: 0.6rem;
-  --shadow-card: 0 1px 2px rgba(28, 36, 31, 0.04), 0 8px 24px -12px rgba(28, 36, 31, 0.12);
+  --shadow-card:
+    0 1px 2px rgba(28, 36, 31, 0.04), 0 8px 24px -12px rgba(28, 36, 31, 0.12);
 }
 
 .dark {
@@ -42,7 +43,8 @@
   --color-danger: #e0a396;
   --color-danger-soft: #3a2420;
   --color-success: #7fb39c;
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  --shadow-card:
+    0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
@@ -70,6 +72,12 @@
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
+  /* overflow-y: scroll; */
+}
+html body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
 }
 html.dark {
   color-scheme: dark;
@@ -81,12 +89,17 @@ body {
   font-family: var(--font-body);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -100,7 +113,9 @@ h1, h2, h3, h4 {
 }
 
 @media print {
-  nav, footer, .no-print {
+  nav,
+  footer,
+  .no-print {
     display: none !important;
   }
 }

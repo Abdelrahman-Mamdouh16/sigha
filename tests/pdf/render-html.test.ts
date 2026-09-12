@@ -14,7 +14,7 @@ const baseDoc: DocumentModel = {
   closing: "خاتمة العقد",
   signatures: [{ role: "المؤجر", name: "أحمد محمد" }],
   witnesses: [{ role: "الشاهد الأول", name: "سارة" }],
-  notices: ["هذه مسودة مولدة بمساعدة الذكاء الاصطناعي"],
+  // notices: ["هذه مسودة مولدة بمساعدة الذكاء الاصطناعي"],
   generatedAt: new Date().toISOString(),
 };
 

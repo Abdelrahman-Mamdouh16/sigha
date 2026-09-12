@@ -33,7 +33,7 @@ export interface DocumentModel {
   closing: string;
   signatures: SignatureBlockModel[];
   witnesses: SignatureBlockModel[];
-  notices: string[];
+  // notices: string[];
   generatedAt: string;
 }
 

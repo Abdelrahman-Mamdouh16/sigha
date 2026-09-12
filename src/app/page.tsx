@@ -1,13 +1,15 @@
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { Hero } from "@/components/landing/hero";
 import { DocumentTypesSection } from "@/components/landing/document-types-section";
-import { HowItWorksSection, WhySighaSection, TrustSection, CtaSection } from "@/components/landing/sections";
+import { Hero } from "@/components/landing/hero";
+import {
+  CtaSection,
+  HowItWorksSection,
+  TrustSection,
+  WhySighaSection,
+} from "@/components/landing/sections";
 
 export default function HomePage() {
   return (
     <>
-      <Navbar />
       <main>
         <Hero />
         <DocumentTypesSection />
@@ -16,7 +18,6 @@ export default function HomePage() {
         <TrustSection />
         <CtaSection />
       </main>
-      <Footer />
     </>
   );
 }
