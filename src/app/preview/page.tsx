@@ -14,7 +14,9 @@ import type { DocumentModel } from "@/types/document";
 export default function PreviewPage() {
   const router = useRouter();
   const { dict } = useLocale();
-  const [document, setDocument] = useState<DocumentModel | null | undefined>(undefined);
+  const [document, setDocument] = useState<DocumentModel | null | undefined>(
+    undefined,
+  );
   const [downloading, setDownloading] = useState(false);
   const [downloadError, setDownloadError] = useState(false);
 
@@ -44,7 +46,11 @@ export default function PreviewPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(document),
       });
-      if (!res.ok) throw new Error("pdf failed");
+      if (!res.ok) {
+        const error = await res.json();
+        console.error("PDF error:", error);
+        throw new Error("pdf failed");
+      }
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
       const a = window.document.createElement("a");
@@ -72,15 +78,23 @@ export default function PreviewPage() {
 
   return (
     <>
-     
       <main className="py-10 sm:py-14">
         <Container>
-          {document === undefined && <div className="py-24 text-center text-(--color-ink-muted)">{dict.common.loading}</div>}
+          {document === undefined && (
+            <div className="py-24 text-center text-(--color-ink-muted)">
+              {dict.common.loading}
+            </div>
+          )}
 
           {document === null && (
             <div className="mx-auto max-w-sm py-24 text-center">
-              <p className="text-(--color-ink-muted)">{dict.errors.notFoundBody}</p>
-              <Button className="mt-6" onClick={() => router.push("/documents")}>
+              <p className="text-(--color-ink-muted)">
+                {dict.errors.notFoundBody}
+              </p>
+              <Button
+                className="mt-6"
+                onClick={() => router.push("/documents")}
+              >
                 {dict.errors.goHome}
               </Button>
             </div>
@@ -89,7 +103,9 @@ export default function PreviewPage() {
           {document && (
             <>
               <div className="no-print mb-8 flex flex-wrap items-center justify-between gap-4">
-                <h1 className="text-2xl font-bold text-(--color-ink)">{dict.preview.heading}</h1>
+                <h1 className="text-2xl font-bold text-(--color-ink)">
+                  {dict.preview.heading}
+                </h1>
                 <div className="flex flex-wrap gap-2.5">
                   <Button variant="secondary" onClick={editDetails}>
                     <Pencil className="h-4 w-4" />
@@ -100,7 +116,11 @@ export default function PreviewPage() {
                     {dict.common.startOver}
                   </Button>
                   <Button onClick={downloadPdf} disabled={downloading}>
-                    {downloading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
+                    {downloading ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Download className="h-4 w-4" />
+                    )}
                     {dict.common.download}
                   </Button>
                 </div>
@@ -112,14 +132,15 @@ export default function PreviewPage() {
                 </p>
               )}
 
-              <p className="no-print mb-6 text-sm text-(--color-ink-muted)">{dict.preview.disclaimer}</p>
+              <p className="no-print mb-6 text-sm text-(--color-ink-muted)">
+                {dict.preview.disclaimer}
+              </p>
 
               <DocumentPreview document={document} />
             </>
           )}
         </Container>
       </main>
-     
     </>
   );
 }

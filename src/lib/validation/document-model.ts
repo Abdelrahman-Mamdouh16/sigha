@@ -33,6 +33,6 @@ export const documentModelSchema = Joi.object({
   closing: Joi.string().max(1000).required(),
   signatures: Joi.array().items(signatureSchema).min(1).max(10).required(),
   witnesses: Joi.array().items(signatureSchema).max(10).required(),
-  notices: Joi.array().items(Joi.string().max(500)).max(10).required(),
+  // notices: Joi.array().items(Joi.string().max(500)).max(10).required(),
   generatedAt: Joi.string().max(60).required(),
 });

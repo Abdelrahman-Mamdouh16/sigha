@@ -15,7 +15,7 @@ export function Navbar() {
 
   const links = [
     { href: "/", label: dict.nav.home },
-    { href: "/documents", label: dict.nav.documents },
+    { href: "/#documents", label: dict.nav.documents },
     { href: "/#how-it-works", label: dict.nav.howItWorks },
     { href: "/#about", label: dict.nav.about },
   ];

@@ -1,12 +1,10 @@
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { Hero } from "@/components/landing/hero";
 import { DocumentTypesSection } from "@/components/landing/document-types-section";
+import { Hero } from "@/components/landing/hero";
 import {
-  HowItWorksSection,
-  WhySighaSection,
-  TrustSection,
   CtaSection,
+  HowItWorksSection,
+  TrustSection,
+  WhySighaSection,
 } from "@/components/landing/sections";
 
 export default function HomePage() {

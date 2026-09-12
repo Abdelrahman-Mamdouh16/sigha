@@ -66,7 +66,7 @@ export function renderDocumentHtml(doc: DocumentModel): string {
     </div>`
     : "";
 
-  const noticesHtml = doc.notices.map((n) => `<p class="notice">${escapeHtml(n)}</p>`).join("");
+  // const noticesHtml = doc.notices.map((n) => `<p class="notice">${escapeHtml(n)}</p>`).join("");
 
   return `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -128,7 +128,6 @@ export function renderDocumentHtml(doc: DocumentModel): string {
 
   <div class="sig-row">${signaturesHtml}</div>
   ${witnessesHtml}
-  ${noticesHtml}
 </body>
 </html>`;
 }

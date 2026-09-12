@@ -32,7 +32,7 @@ export async function buildRentalDocument(v: RentalFormValues): Promise<{ docume
       ...(v.signatures.witness1 ? [{ role: "الشاهد الأول", name: v.signatures.witness1 }] : []),
       ...(v.signatures.witness2 ? [{ role: "الشاهد الثاني", name: v.signatures.witness2 }] : []),
     ],
-    notices: ["هذه مسودة مولدة بمساعدة الذكاء الاصطناعي، ويُنصح بمراجعتها من مختص قانوني قبل استخدامها."],
+    // notices: ["هذه مسودة مولدة بمساعدة الذكاء الاصطناعي، ويُنصح بمراجعتها من مختص قانوني قبل استخدامها."],
     generatedAt: new Date().toISOString(),
   };
 
